@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin - Hospital Management System</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <h1>🏥 HMS – Admin</h1>
+  <div class="who"><span id="who"></span><button class="btn ghost small" onclick="logout()">Logout</button></div>
+</div>
+<main>
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="dash">Dashboard</button>
+    <button class="tab" data-tab="deps">Departments</button>
+    <button class="tab" data-tab="docs">Doctors</button>
+    <button class="tab" data-tab="pats">Patients</button>
+    <button class="tab" data-tab="apps">Appointments</button>
+    <button class="tab" data-tab="bills">Billing</button>
+  </div>
+
+  <section id="dash"><div class="grid" id="stats"></div></section>
+
+  <section id="deps" class="hide">
+    <div class="card"><h2>Add department</h2>
+      <form class="row" id="depForm">
+        <div><label for="depName">Department name</label><input id="depName" required></div>
+        <div><button class="btn">Add</button></div>
+      </form></div>
+    <div class="card"><h2>Departments</h2><div id="depList"></div></div>
+  </section>
+
+  <section id="docs" class="hide">
+    <div class="card"><h2>Add doctor</h2>
+      <form class="row" id="docForm">
+        <div><label for="dn">Name</label><input id="dn" required></div>
+        <div><label for="dd">Department</label><select id="dd" required></select></div>
+        <div><label for="dph">Phone</label><input id="dph"></div>
+        <div><label for="df">Consultation fee (₹)</label><input id="df" type="number" min="0" step="0.01" required></div>
+        <div><label for="du">Login username</label><input id="du" required></div>
+        <div><label for="dp">Login password</label><input id="dp" type="password" minlength="6" required></div>
+        <div><button class="btn">Add doctor</button></div>
+      </form></div>
+    <div class="card"><h2>Doctors</h2><div id="docList"></div></div>
+  </section>
+
+  <section id="pats" class="hide"><div class="card"><h2>Patients</h2><div id="patList"></div></div></section>
+  <section id="apps" class="hide"><div class="card"><h2>All appointments</h2><div id="appList"></div></div></section>
+  <section id="bills" class="hide"><div class="card"><h2>Bills</h2><div id="billList"></div></div></section>
+</main>
+<div id="toast"></div>
+<script src="./js/local-api.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/admin.js"></script>
+</body>
+</html>

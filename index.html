@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital Management System - Login</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="auth">
+  <div class="brand">
+    <h1>🏥 Hospital Management System</h1>
+    <p>Login to continue</p>
+  </div>
+  <div class="card">
+    <div class="switch">
+      <button class="tab active" id="tabLogin" type="button">Login</button>
+      <button class="tab" id="tabReg" type="button">Patient Register</button>
+    </div>
+
+    <form id="loginForm">
+      <div class="field"><label for="lu">Username</label><input id="lu" required autocomplete="username"></div>
+      <div class="field"><label for="lp">Password</label><input id="lp" type="password" required autocomplete="current-password"></div>
+      <button class="btn" style="width:100%">Login</button>
+      <p class="hint">Demo logins: admin / admin123 &nbsp;|&nbsp; dr.ravi / doctor123<br>Data is saved in this browser (localStorage). <a href="#" id="resetData">Reset demo data</a></p>
+    </form>
+
+    <form id="regForm" class="hide">
+      <div class="field"><label for="rn">Full name</label><input id="rn" required></div>
+      <div class="field"><label for="ru">Username</label><input id="ru" required></div>
+      <div class="field"><label for="rp">Password (min 6 characters)</label><input id="rp" type="password" minlength="6" required></div>
+      <div class="field"><label for="ra">Age</label><input id="ra" type="number" min="0" max="120"></div>
+      <div class="field"><label for="rg">Gender</label>
+        <select id="rg"><option>Male</option><option>Female</option><option>Other</option></select></div>
+      <div class="field"><label for="rph">Phone</label><input id="rph"></div>
+      <div class="field"><label for="rad">Address</label><input id="rad"></div>
+      <button class="btn" style="width:100%">Create account</button>
+    </form>
+  </div>
+</div>
+<div id="toast"></div>
+<script src="./js/local-api.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/login.js"></script>
+</body>
+</html>

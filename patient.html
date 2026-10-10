@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patient - Hospital Management System</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <h1>🏥 HMS – Patient</h1>
+  <div class="who"><span id="who"></span><button class="btn ghost small" onclick="logout()">Logout</button></div>
+</div>
+<main>
+  <div class="card"><h2>Book an appointment</h2>
+    <form class="row" id="bookForm">
+      <div><label for="doc">Doctor</label><select id="doc" required></select></div>
+      <div><label for="date">Date</label><input id="date" type="date" required></div>
+      <div><label for="time">Time</label><input id="time" type="time" required></div>
+      <div><label for="reason">Reason</label><input id="reason" required></div>
+      <div><button class="btn">Book</button></div>
+    </form>
+  </div>
+  <div class="card"><h2>My appointments and prescriptions</h2><div id="appList"></div></div>
+  <div class="card"><h2>My bills</h2><div id="billList"></div></div>
+</main>
+<div id="toast"></div>
+<script src="./js/local-api.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/patient.js"></script>
+</body>
+</html>
